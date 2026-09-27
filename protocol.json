@@ -1,0 +1,57 @@
+{
+  "backbone_lr": 0.0001,
+  "bootstrap_replicates": 2000,
+  "calibration_fractions": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "chexpert_patient_cap": 20000,
+  "ece_bins": 15,
+  "effective_batch": 64,
+  "epochs": 20,
+  "fractions": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "head_dropout": 0.2,
+  "head_lr": 0.001,
+  "labels": [
+    "cardiomegaly",
+    "pleural_effusion"
+  ],
+  "loss": "unweighted_BCE",
+  "mc_head_samples": 20,
+  "microbatch": 32,
+  "min_delta": 0.0001,
+  "min_epochs": 5,
+  "models": {
+    "deit_tiny": "deit_tiny_patch16_224.fb_in1k",
+    "densenet121": "densenet121.ra_in1k",
+    "resnet18": "resnet18.a1_in1k"
+  },
+  "patience": 4,
+  "preparation": "uint8_full_frame_bilinear_224;exact_pixel_dedup;dhash_review",
+  "primary": "external_Brier_temperature_minus_raw_at_full_training",
+  "seeds": [
+    17,
+    43,
+    101
+  ],
+  "size": 224,
+  "source_threshold_sensitivity": 0.9,
+  "split_proportions": [
+    0.6,
+    0.1,
+    0.1,
+    0.2
+  ],
+  "split_seed": 20260926,
+  "training_augmentation": "affine_5deg_translate_0.02;brightness_contrast_0.1;no_flip_no_crop",
+  "version": "0.1.0",
+  "warmup_epochs": 2,
+  "weight_decay": 0.0001
+}
